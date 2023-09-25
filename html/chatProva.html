@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <title>SocialRecipe - Chat</title>
+</head>
+
+<style>
+    .search{
+        margin-left: 70%;
+    }
+    
+    .search-icon{
+        border-radius: 4rem;
+        border: none;
+        width: 30rem;
+        color: black;
+    }
+
+    .buttonSearch{
+        background: transparent;
+        border: none;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 16px;
+}
+
+.chat {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+.chat-message {
+    max-width: 70%;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.received {
+    align-self: flex-start;
+    background-color: #e5e5ea;
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: #00bfff;
+    color: white;
+}
+
+.message-text {
+    word-wrap: break-word;
+}
+
+.input-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: fixed;
+    bottom: 4.5%;
+    width: 80%;
+}
+
+.message-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.send-button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+</style>
+
+<body>
+    <header>
+        <button class="buttonSide" id="buttonSide">SocialRecipe</button>
+        <label class="search">
+            <input type="text" placeholder="Cerca..." class="search-icon" id="search">
+            <button type="submit" class="buttonSearch" id="buttonSearch">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </label>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div id="welcomeMessage" class="welcome-message"></div>
+            <hr>
+            <ul>
+                <li><a href="homepage.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                <li><a href="profilo.html"><i class="glyphicon glyphicon-user"></i>Profilo</a></li>
+                <li><a href="ricetta.html"><i class="glyphicon glyphicon-cloud"></i>Ricette</a></li>
+                <hr>
+                <li><a href="" id="logout"><i class="glyphicon glyphicon-remove"></i>Log Out</a></li>
+                <li><a href="" id="delete"><i class="glyphicon glyphicon-remove"></i>Elimina Profilo</a></li>
+            </ul>
+        </div>
+        <main>
+            <div class="chat-container">
+                <div class="chat">
+                    <div class="chat-message received">
+                        <div class="message-text"></div>
+                    </div>
+                    <div class="chat-message sent">
+                        <div class="message-text"></div>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Scrivi un messaggio" class="message-input">
+                    <button class="send-button">Invia</button>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script src="../js/side.js"></script>
+    <script src="../js/homepage.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/welcomeMess.js"></script>
+    <script src="../js/chatProva.js"></script>
+</body>
+
+</html>

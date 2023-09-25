@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialRecipe - Log in</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+    <header>
+        <button class="buttonSide" id="buttonSide">SocialRecipe</button>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div id="welcomeMessage" class="welcome-message"></div>
+            <hr>
+            <ul>
+                <li><a href="homepage.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                <li><a href="profilo.html"><i class="glyphicon glyphicon-user"></i>Profilo</a></li>
+                <li><a href="ricetta.html"><i class="glyphicon glyphicon-cloud"></i>Ricette</a></li>
+                <hr>
+                <li><a href="" id="logout"><i class="glyphicon glyphicon-remove"></i>Log Out</a></li>
+            </ul>
+        </div>
+        <main>
+
+            <form class="form" id="loginUser">
+                <p class="title">LOG IN </p>
+                <p class="message">Signup now and get full access to our app. </p>
+
+
+
+                <label>
+                    <input required="" placeholder="" type="email" class="input" name="email" id="email">
+                    <span>Email</span>
+                </label>
+
+                <label>
+                    <input required="" placeholder="" type="password" class="input" name="password" id="password">
+                    <span>Password</span>
+
+                </label>
+                <label for="">
+                    <input type="checkbox" class="mostraPass" name="mostraPass" id="mostraPass">
+              <span>Show</span>
+          </label>
+  
+          <button class=" submit">Accedi</button>
+                    <p class="signin">Crea ub account <a href="signin.html">Signin</a> </p>
+            </form>
+        </main>
+    </div>
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    </div>
+
+
+    <script src="../js/side.js"></script>
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "recipe": [
+    {
+      "id": 1,
+      "titolo": "a",
+      "ingredienti": "b",
+      "istruzioni": "c",
+      "urlImmagine": "d"
+    },
+    {},
+    {
+      "titolo": "Sformato di melanzane",
+      "ingredienti": "Ingredienti per le melanzane 3 melanzane 1 uovo 20 gr di pangrattato 10 gr di parmigiano reggiano 3 cl di olio extravergine di oliva 4 foglie di basilico sale e pepe q.b. Ingredienti per la salsa di pomodoro 1 cipolla piccola 2 cucchiai di olio extravergine d'oliva 100 gr di passata di pomodoro 2 foglie di basilico sale e pepe q. b.",
+      "istruzioni": "Per le melanzane Tagliate a metà le melanzane, passatele al forno a 200° per 20 minuti. Togliete la buccia alle melanzane, mettetele nel mixer col pangrattato, l’uovo, il parmigiano, il basilico, il sale e il pepe. Prendete degli stampini, bagnateli con l’olio, riempiteli con il composto e passate nel forno a 180° per 10 minuti. Quando saranno tiepidi, rovesciate gli stampini sul piatto dove sarà messa una base di salsa di pomodoro. Per la salsa In una padella soffriggete la cipolla tritata, unite il pomodoro, il basilico, il sale, il pepe e lasciate cuocere per 15 minuti circa",
+      "urlImmagine": {},
+      "id": 2
+    }
+  
+  ]
+}

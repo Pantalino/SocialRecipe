@@ -1,0 +1,92 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 16px;
+}
+
+.chat {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+.chat-message {
+    max-width: 70%;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.received {
+    align-self: flex-start;
+    background-color: #e5e5ea;
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: #00bfff;
+    color: white;
+}
+
+.message-text {
+    word-wrap: break-word;
+}
+
+.input-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: fixed;
+    bottom: 4.5%;
+    width: 80%;
+}
+
+.message-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.send-button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Stili per il contenitore principale */
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Stili per la lista degli utenti a sinistra */
+.user-list {
+    flex: 0 0 30%; /* Utilizziamo il 30% della larghezza disponibile */
+    background-color: #f2f2f2;
+    padding: 16px;
+    overflow-y: auto; /* Scorrimento verticale se necessario */
+}
+
+/* Stili per la finestra dei messaggi a destra */
+.chat-window {
+    flex: 1; /* Utilizziamo tutto lo spazio rimanente */
+    background-color: #ffffff;
+    padding: 16px;
+    overflow-y: auto; /* Scorrimento verticale se necessario */
+}

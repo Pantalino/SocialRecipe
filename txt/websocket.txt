@@ -1,0 +1,11 @@
+     //prova webSocket
+                    // socket.addEventListener('message', function (event) {
+                    //     const data = JSON.parse(event.data);
+                    //     if (data.type === 'likeUpdate') {
+                    //         const recipeId = data.recipeId;
+                    //         const likeCountElement = document.querySelector(`[data-recipe-id="${recipeId}"] .like-count`);
+                    //         if (likeCountElement) {
+                    //             likeCountElement.innerHTML = `Piace: ${data.likeCount}`;
+                    //         }
+                    //     }
+                    // });

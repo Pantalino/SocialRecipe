@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selezione Utenti e Ricette</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+    body{
+        height: 100vh;
+    }
+
+    footer{
+        margin-bottom: 0vh;
+        justify-content: center;
+        
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a class="navbar-logo" href="home.html">Il tuo logo</a>
+
+        <ul class="navbar-menu" id="navbarMenu">
+
+            <li><a href="../html/delete.html">Delete</a></li>
+            <li><a href="../html/contatti.html">Contatti</a></li>
+            <li><a href="../html/logout.html" id="logout">Log Out</a></li>
+            <li><a href="../html/homepage.html" id="logout">Home Page</a></li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+    <div>
+        <h2>Seleziona un utente:</h2>
+        <div id="userSelection">
+            <!-- Le checkbox degli utenti verranno aggiunte dinamicamente -->
+        </div>
+    </div>
+    <div>
+        <h2>Ricette dell'utente selezionato:</h2>
+        <div id="recipeSelection">
+            <!-- Le checkbox delle ricette verranno aggiunte dinamicamente -->
+        </div>
+    </div>
+    <div id="recipeDetails" style="display: none;">
+        <h2>Dettagli Ricetta:</h2>
+        <div id="ricettaDetails">
+            <!-- Qui verranno visualizzati i dettagli della ricetta selezionata -->
+        </div>
+        <h2 id="commentiTitle" style="display: none;">Commenti:</h2>
+        <div id="commentiList">
+            <!-- Qui verranno visualizzati i commenti relativi alla ricetta selezionata -->
+        </div>
+        <button id="toggleCommentButton" style="display: none;">Mostra Commenti</button>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Nome della Tua Azienda. Tutti i diritti riservati.</p>
+    </footer>
+
+
+    <script src="../js/check.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialRecipe App</title>
+    <style>
+        /* Aggiungi i tuoi stili CSS qui */
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a class="navbar-logo" href="home.html">Il tuo logo</a>
+        <ul class="navbar-menu" id="navbarMenu">
+            <li><a href="../html/delete.html">Delete</a></li>
+            <li><a href="../html/contatti.html">Contatti</a></li>
+            <li><a href="../html/logout.html" id="logout">Log Out</a></li>
+            <li><a href="../html/homepage.html" id="logout">Home Page</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+    <div class="c">
+        <h1>SocialRecipe App</h1>
+        <div id="userSelection">
+            <!-- Le opzioni degli utenti verranno aggiunte dinamicamente -->
+        </div>
+        <div id="recipeSelection">
+            <!-- Le opzioni delle ricette verranno aggiunte dinamicamente -->
+        </div>
+        <div id="recipeDetails" class="ricette" style="display: none;">
+            <!-- Qui verranno visualizzati i dettagli della ricetta selezionata -->
+        </div>
+        <h2>Commenti:</h2>
+        <div id="commentiList" class="commenti">
+            <!-- Qui verranno visualizzati i commenti relativi alla ricetta selezionata -->
+        </div>
+        <footer class="footer">
+            <p>&copy; 2023 Nome della Tua Azienda. Tutti i diritti riservati.</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const URL = 'http://localhost:8080';
+            const userSelection = document.getElementById('userSelection');
+            const recipeSelection = document.getElementById('recipeSelection');
+            const recipeDetails = document.getElementById('recipeDetails');
+
+            let selectedUserId = null;
+            let selectedRecipeId = null;
+
+            // Carica gli utenti all'avvio della pagina
+            fetch(`${URL}/api/utenti`)
+                .then(response => response.json())
+                .then(users => {
+                    users.forEach(user => {
+                        const userCheckbox = document.createElement('input');
+                        userCheckbox.type = 'radio';
+                        userCheckbox.name = 'userRadio';
+                        userCheckbox.id = `userCheckbox_${user.id}`;
+                        userCheckbox.value = user.id;
+
+                        const userLabel = document.createElement('label');
+                        userLabel.htmlFor = `userCheckbox_${user.id}`;
+                        userLabel.textContent = `${user.nome} ${user.cognome}`;
+
+                        const userCard = document.createElement('div');
+                        userCard.className = 'userCard';
+                        userCard.appendChild(userCheckbox);
+                        userCard.appendChild(userLabel);
+
+                        userCheckbox.addEventListener('change', () => {
+                            if (userCheckbox.checked) {
+                                selectedUserId = user.id;
+                                selectedRecipeId = null;
+                                loadRecipesAndRender();
+                            }
+                        });
+
+                        userSelection.appendChild(userCard);
+                    });
+                });
+
+            function loadRecipesAndRender() {
+                recipeSelection.innerHTML = '';
+                recipeDetails.style.display = 'none';
+
+                if (selectedUserId !== null) {
+                    const allRecipesCheckbox = document.createElement('input');
+                    allRecipesCheckbox.type = 'checkbox';
+                    allRecipesCheckbox.id = 'allRecipesCheckbox';
+                    allRecipesCheckbox.value = 'allRecipes';
+
+                    const allRecipesLabel = document.createElement('label');
+                    allRecipesLabel.htmlFor = 'allRecipesCheckbox';
+                    allRecipesLabel.textContent = 'Tutte le ricette';
+
+                    const allRecipesCard = document.createElement('div');
+                    allRecipesCard.className = 'recipeCard';
+                    allRecipesCard.appendChild(allRecipesCheckbox);
+                    allRecipesCard.appendChild(allRecipesLabel);
+
+                    allRecipesCheckbox.addEventListener('change', () => {
+                        if (allRecipesCheckbox.checked) {
+                            selectedRecipeId = null;
+                            renderRecipeDetails();
+                        }
+                    });
+
+                    recipeSelection.appendChild(allRecipesCard);
+
+                    fetch(`${URL}/api/utenti/${selectedUserId}/ricette`)
+                        .then(data => data.json())
+                        .then(response => {
+                            response.forEach(ricetta => {
+                                const recipeCheckbox = document.createElement('input');
+                                recipeCheckbox.type = 'checkbox';
+                                recipeCheckbox.name = 'recipeCheckbox';
+                                recipeCheckbox.id = `recipeCheckbox_${ricetta.id}`;
+                                recipeCheckbox.value = ricetta.id;
+
+                                const recipeLabel = document.createElement('label');
+                                recipeLabel.htmlFor = `recipeCheckbox_${ricetta.id}`;
+                                recipeLabel.textContent = ricetta.titolo;
+
+                                const recipeCard = document.createElement('div');
+                                recipeCard.className = 'recipeCard';
+                                recipeCard.appendChild(recipeCheckbox);
+                                recipeCard.appendChild(recipeLabel);
+
+                                recipeCheckbox.addEventListener('change', () => {
+                                    if (recipeCheckbox.checked) {
+                                        selectedRecipeId = ricetta.id;
+                                        allRecipesCheckbox.checked = false;
+                                        renderRecipeDetails();
+                                    }
+                                });
+
+                                recipeSelection.appendChild(recipeCard);
+                            });
+                        });
+                }
+            }
+
+            function renderRecipeDetails() {
+                if (selectedRecipeId !== null) {
+                    fetch(`${URL}/api/ricette/${selectedRecipeId}`)
+                        .then(response => response.json())
+                        .then(ricetta => {
+                            recipeDetails.style.display = 'block';
+                            const ricettaDetails = document.getElementById('ricettaDetails');
+                            ricettaDetails.innerHTML = `
+                            <p><strong>Titolo:</strong> ${ricetta.titolo}</p>
+                            <p><strong>Ingredienti:</strong> ${ricetta.ingredienti}</p>
+                            <p><strong>Istruzioni:</strong> ${ricetta.istruzioni}</p>
+                            <img src="${ricetta.urlImmagine}" alt="Ricetta Image">
+                            `;
+                        });
+                } else {
+                    recipeDetails.style.display = 'none';
+                }
+            }
+
+            // Inizializza il caricamento delle ricette
+            loadRecipesAndRender();
+        });
+    </script>
+</body>
+
+</html>

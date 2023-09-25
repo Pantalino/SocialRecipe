@@ -1,0 +1,179 @@
+/* Stile homepage */
+.post-section {
+    margin: 5rem 0;
+}
+
+
+.post-utente {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem;
+    margin-left: 0;
+}  
+
+.post-card {
+    /* border: 3px double royalblue;
+    border-radius: 5%; */
+    padding: 0rem 0rem 1rem 3rem;
+    margin: 15rem 10rem 10rem 4rem;
+    background: radial-gradient(circle, whitesmoke 50%, royalblue 150%);
+    padding: 3rem;
+    border-radius: 10rem 10rem 10rem 10rem;
+    animation: color 5s infinite;
+
+}
+.post-button {
+    display: flex;
+}
+
+.post-add{
+    display: flex;
+ 
+}
+
+.istruzioni {
+    display: none;
+}
+
+.ingredienti {
+    display: none;
+}
+
+
+.aside {
+    /* flex: 1; */
+    padding: 20px 20px 5px 20px;
+    box-sizing: border-box;
+    /* min-width: 25%; */
+}
+
+
+@keyframes color {
+    50% {
+        box-shadow: 0 0 3rem 3rem rgba(65, 105, 225, 0.36);
+    }
+}
+
+
+
+
+
+.nome-utente {
+    font-size: 2rem;
+    top: 100%;
+    /* margin: 5rem; */
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+.imgRicetta {
+    height: 4%;
+    width: 100%;
+    border-radius: 2rem;
+    border: grey 2px solid;
+}
+
+.like-icon {
+    cursor: pointer;
+    color: rgba(128, 128, 128, 0.482);
+    font-size: 50px;
+    margin-top: 10px;
+    background: transparent;
+    border: transparent;
+
+}
+
+.like-icon:hover {
+    color: red;
+
+}
+
+.liked {
+    color: red;
+
+
+}
+
+.like-count{
+    font-weight: bold;
+}
+
+.foto {
+    height: 8rem;
+    width: 8rem;
+    border: rgba(0, 0, 0, 0.422) 3px solid;
+    border-radius: 4rem;
+}
+
+.istruzioniButton,
+.ingredientiButton {
+    background:  rgba(245, 245, 245, 0.933);
+    border: gray 1px solid;
+    border-radius: 2rem;
+    opacity: 50%;
+    font-size: large;
+    width: 10rem;
+    margin-right: 10px;
+}
+.commentiButton{
+    background:  rgba(245, 245, 245, 0.933);
+    border: gray 1px solid;
+    border-radius: 2rem;
+    opacity: 50%;
+    font-size: large;
+    width: 10rem;
+    margin-right: 10px;
+    width: 20rem;
+}
+
+.comment-input {
+    /* border: none;
+    border-bottom: 2px gray solid;
+    width: 50%;
+    display: inline;
+    margin-left: 23%; */
+
+    width: 55%;
+    height: 10%;
+    margin: 1rem 5rem 0 5rem;
+    bottom: 0;
+    background: rgba(245, 245, 245, 0.933);
+    border-radius: 2rem;
+    text-align: 5px;
+    text-decoration: none;
+}
+
+.new-comment {
+    padding: 1rem 5rem;
+}
+
+.submit-button {
+    background:  rgba(245, 245, 245, 0.933);
+    border: gray 1px solid;
+    border-radius: 2rem;
+    opacity: 50%;
+    font-size: large;
+    /* margin-left: 70%; */
+}
+
+.commenti::after {
+    color: royalblue;
+}
+
+.follow-button {
+    /* margin: auto; */
+    margin-top: 50px;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 2rem;
+    border: black 3px solid;
+    background-color: yellow;
+    font-size: 1.3rem;
+  
+    
+}
+
+.follower-count, .following-count{
+    /* margin: 0 auto; */
+    margin-top: 60px;
+}

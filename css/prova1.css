@@ -1,0 +1,197 @@
+
+/* Resetta alcuni stili di default del browser */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Stili di base per l'intera pagina */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  /* Stili per l'header */
+  .header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Stili per la sidebar */
+  .sidebar {
+    background-color: #555;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 60px; /* Altezza dell'header */
+    bottom: 40px; /* Altezza del footer */
+    transform: translateX(-220px); /* Nasconde la sidebar inizialmente */
+  }
+  
+  .sidebar.hidden {
+    display: none; /* Nasconde la sidebar completamente */
+  }
+  
+  /* Stili per il contenuto principale */
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20px; /* Margine sinistro, la sidebar è nascosta */
+    margin-right: 20px;
+  }
+  
+  /* Stili per il footer */
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .sidebar {
+    /* ... altri stili ... */
+    transform: translateX(-220px); /* Nasconde la sidebar inizialmente */
+    transition: transform 0.3s ease; /* Aggiunge una transizione fluida */
+  }
+  
+
+  .sidebar.hidden {
+    transform: translateX(-220px);
+     display: none;
+  }
+  
+  .main-content.full-width {
+    margin-left: 20px;
+  }
+  
+  /* Aggiungi questa classe se desideri che la sidebar si nasconda inizialmente */
+  .sidebar.hidden {
+   
+  }
+  /*  */
+  
+  
+  /* Stile homepage */
+  .post-section {
+   
+    padding-top: 3rem;
+  }
+  
+  .aside {
+    
+    padding: 20px 20px 5px 20px;
+    box-sizing: border-box;
+   
+  }
+  
+  .post-card {
+    padding: 0rem 0rem 1rem 0rem;
+    margin: 4rem 10rem 5rem 4rem;
+  
+  
+  }
+  
+  .post-utente {
+    background: royalblue;
+    border-radius: 4rem 4rem 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nome-utente {
+    font-size: 2rem;
+    top: 100%;
+  }
+  
+  .imgRicetta {
+    height: 4%;
+    width: 100%;
+    border-radius: 2rem;
+    border: grey 2px solid;
+  }
+  
+  .like-icon {
+    cursor: pointer;
+    color: rgba(128, 128, 128, 0.482);
+    font-size: 50px;
+    margin-top: 10px;
+    background: transparent;
+    border: transparent;
+  
+  }
+  
+  .like-icon:hover {
+    color: red;
+  
+  }
+  
+  .liked {
+    color: red;
+  
+  
+  }
+  
+  .foto {
+    height: 8rem;
+    width: 8rem;
+    border: rgba(0, 0, 0, 0.422) 3px solid;
+    border-radius: 4rem;
+  }
+  
+  .commenti {
+    background: transparent;
+    border: gray 1px solid;
+    border-radius: 2rem;
+    opacity: 50%;
+    font-size: large;
+    margin-left: 70%;
+  }
+  
+  .comment-input {
+    border: none;
+    border-bottom: 2px gray solid;
+    width: 50%;
+    display: inline;
+    margin-left: 23%;
+  }
+  
+  .new-comment {
+    padding: 1rem 5rem;
+  }
+  
+  .submit-button {
+    background: transparent;
+    border: gray 1px solid;
+    border-radius: 2rem;
+    opacity: 50%;
+    font-size: large;
+    margin-left: 70%;
+  }
+  
+  .commenti::after {
+    color: royalblue;
+  }
+  
+  .segui {
+    margin: auto;
+    height: 2rem;
+    width: 6rem;
+    border-radius: 2rem;
+    border: black 3px solid;
+    background-color: yellow;
+    font-size: 1.3rem;
+  }
